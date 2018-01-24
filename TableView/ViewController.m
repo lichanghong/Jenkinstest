@@ -16,6 +16,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    dispatch_queue_t queue = dispatch_queue_create("eheheh", 0);
+    dispatch_async(queue, ^{//异步串行执行
+        NSLog(@"1");    });
+    dispatch_async(queue, ^{//异步串行执行
+        NSLog(@"2");    });
+    dispatch_async(queue, ^{//异步串行执行
+        NSLog(@"3");    });
+    dispatch_async(queue, ^{//异步串行执行
+        NSLog(@"4");    });
+    dispatch_async(queue, ^{//异步串行执行
+        NSLog(@"5");    });
+    dispatch_async(queue, ^{//异步串行执行
+        NSLog(@"6");    });
+    NSLog(@"finish");  
     // Do any additional setup after loading the view, typically from a nib.
 }
 
