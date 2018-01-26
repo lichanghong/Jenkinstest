@@ -53,6 +53,7 @@
 		2BA4240DEB8E76E86949EEF5 /* Pods-TableViewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TableViewTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TableViewTests/Pods-TableViewTests.release.xcconfig"; sourceTree = "<group>"; };
 		35D4087CB8D08424E8AFC16E /* libPods-TableViewTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TableViewTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E65412554388EBE737F30C0 /* libPods-TableView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TableView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		812655E42019DD38008A3681 /* TableView.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TableView.entitlements; sourceTree = "<group>"; };
 		81CDA2B520149CB7002A6E88 /* TableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81CDA2B820149CB7002A6E88 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		81CDA2B920149CB7002A6E88 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -153,6 +154,7 @@
 		81CDA2B720149CB7002A6E88 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				812655E42019DD38008A3681 /* TableView.entitlements */,
 				81CDA2B820149CB7002A6E88 /* AppDelegate.h */,
 				81CDA2B920149CB7002A6E88 /* AppDelegate.m */,
 				81CDA2BB20149CB7002A6E88 /* ViewController.h */,
@@ -263,6 +265,14 @@
 					81CDA2B420149CB7002A6E88 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					81CDA2CC20149CB7002A6E88 = {
 						CreatedOnToolsVersion = 9.2;
@@ -655,6 +665,7 @@
 			baseConfigurationReference = EC8BF398414DF22E9C34D2E2 /* Pods-TableView.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TableView/TableView.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Soyoung Qingyang Medical Instrument Co., Limited (SXHK8ES9Y5)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = SXHK8ES9Y5;
@@ -674,6 +685,7 @@
 			baseConfigurationReference = ACAEF0BB7C4F2E58735B8A0E /* Pods-TableView.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TableView/TableView.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Soyoung Qingyang Medical Instrument Co., Limited (SXHK8ES9Y5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Soyoung Qingyang Medical Instrument Co., Limited (SXHK8ES9Y5)";
 				CODE_SIGN_STYLE = Manual;

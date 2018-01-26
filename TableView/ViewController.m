@@ -9,27 +9,30 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-
-@end
+ @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    dispatch_queue_t queue = dispatch_queue_create("eheheh", 0);
-    dispatch_async(queue, ^{//异步串行执行
-        NSLog(@"1");    });
-    dispatch_async(queue, ^{//异步串行执行
-        NSLog(@"2");    });
-    dispatch_async(queue, ^{//异步串行执行
-        NSLog(@"3");    });
-    dispatch_async(queue, ^{//异步串行执行
-        NSLog(@"4");    });
-    dispatch_async(queue, ^{//异步串行执行
-        NSLog(@"5");    });
-    dispatch_async(queue, ^{//异步串行执行
-        NSLog(@"6");    });
-    NSLog(@"finish");  
+ 
+    NSLog(@"%s",dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL));
+//    dispatch_queue_t queue = dispatch_queue_create("eheheh", 0);
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{//异步串行执行
+        NSLog(@"%s",dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL));
+
+    });
+//    dispatch_async(queue, ^{//异步串行执行
+//        NSLog(@"2");    });
+//    dispatch_async(queue, ^{//异步串行执行
+//        NSLog(@"3");    });
+//    dispatch_async(queue, ^{//异步串行执行
+//        NSLog(@"4");    });
+//    dispatch_async(queue, ^{//异步串行执行
+//        NSLog(@"5");    });
+//    dispatch_async(queue, ^{//异步串行执行
+//        NSLog(@"6");    });
+    NSLog(@"finish");
     // Do any additional setup after loading the view, typically from a nib.
 }
 
